@@ -1,0 +1,22 @@
+<%- include('./partials/header') %>
+
+<h1>Latest Posts</h1>
+
+<% if (blogs.length === 0) { %>
+    <p class="empty">No blogs yet. <a href="/blogs/create">Write one.</a></p>
+<% } %>
+
+<div class="blog-list">
+    <% blogs.forEach(blog => { %>
+        <div class="blog-card">
+            <h2><a href="/blogs/<%= blog._id %>"><%= blog.title %></a></h2>
+            <p class="snippet"><%= blog.snippet %></p>
+            <div class="meta">
+                <span><%= new Date(blog.createdAt).toDateString() %></span>
+                <a href="/blogs/<%= blog._id %>" class="read-more">Read more →</a>
+            </div>
+        </div>
+    <% }) %>
+</div>
+
+<%- include('./partials/footer') %>

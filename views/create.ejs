@@ -1,0 +1,18 @@
+<%- include('./partials/header') %>
+
+<h1>New Blog Post</h1>
+
+<form action="/blogs" method="POST" class="create-form">
+    <label>Title</label>
+    <input type="text" name="title" required placeholder="Enter title">
+
+    <label>Snippet</label>
+    <input type="text" name="snippet" required placeholder="Short summary">
+
+    <label>Body</label>
+    <textarea name="body" required placeholder="Write your blog here..."></textarea>
+
+    <button type="submit">Publish</button>
+</form>
+
+<%- include('./partials/footer') %>
