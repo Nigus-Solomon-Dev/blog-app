@@ -6,7 +6,7 @@ const blogRoutes = require('./routes/blogRoutes');
 const app = express();
 
 mongoose.connect(process.env.MONGODB_URI)
-    .then(() => app.listen(8000, () => console.log('Server running on port 8000')))
+    .then(() => app.listen(5000, () => console.log('Server running on port 8000')))
     .catch((err) => console.log(err));
 
 app.set('view engine', 'ejs');
